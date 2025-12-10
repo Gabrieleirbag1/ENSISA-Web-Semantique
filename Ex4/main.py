@@ -1,3 +1,4 @@
+#GARRONE-GABRIEL
 db = [['bob', 'studies', 'ensisa'], ['ensisa', 'located', 'mulhouse']]
 
 db += [[x[1], "rdf:domain", "Person"] for x in db if x[0] == "bob"]

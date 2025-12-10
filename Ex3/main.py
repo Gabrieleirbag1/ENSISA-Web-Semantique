@@ -1,3 +1,4 @@
+#GARRONE-GABRIEL
 s1 = {"bob", "studies", "ensisa"}
 s2 = {"ensisa", "located", "mulhouse"}
 fail = []
