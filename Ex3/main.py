@@ -31,4 +31,8 @@ print(res)
 
 db = [['bob', 'studies', 'ensisa'], ['ensisa', 'located', 'mulhouse']]
 print(filter(lambda x: x[0]=="bob", db))
+
 print([x for x in db if x[0]=="bob"])
+
+#7.
+print( [x[0] for x in db if x[1] == "studies"])
