@@ -1,3 +1,5 @@
+import os
+
 def includeEnsemble(text, ensemble):
     if text in ensemble:
         return True
@@ -52,5 +54,17 @@ print(includeEnsemble("salut", ensemble))
 compare()
 
 s3 = {"bob", "etudie", "à", "l", "ensisa"}
-s4 = {"à", "le", "la", "les", "l"}
+s4 = {"à", "le", "la", "les", "l", "at", "the", "is"}
 print(difference(s3, s4))
+
+with open(os.path.join(os.path.dirname(__file__),"data.txt"), "r") as f:
+    txt = f.read()
+    txt = txt.split(".")
+    resulting_sentences = []
+    for sentence in txt:
+        if sentence:
+            sentence = sentence.split(' ')
+            print(sentence)
+            sentence = difference(sentence, s4)
+            resulting_sentences.append(sentence)
+    print(resulting_sentences)
