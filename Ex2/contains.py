@@ -3,7 +3,7 @@ def includeEnsemble(text, ensemble):
         return True
     return False
 
-def union(s1, s2):
+def union(ens1, ens2):
     # uni = []
     # seen = []
     # for text in (s1 | s2):
@@ -12,19 +12,19 @@ def union(s1, s2):
     #     seen.append(text)
     #     uni.append(text)
     # return uni
-    return list(difference(list(s1), list(s2))) + list(s2)
+    return list(difference(list(ens1), list(ens2))) + list(ens2)
 
-def intersection(s1, s2):
+def intersection(ens1, ens2):
     intersection = []
-    for text in s1:
-        if includeEnsemble(text, s2):
+    for text in ens1:
+        if includeEnsemble(text, ens2):
             intersection.append(text)
     return intersection
 
-def difference(s1, s2):
+def difference(ens1, ens2):
     diff = []
-    for text in s1:
-        if not includeEnsemble(text, s2):
+    for text in ens1:
+        if not includeEnsemble(text, ens2):
             diff.append(text)
     return diff
 
@@ -50,3 +50,7 @@ s2 = {"ensisa", "located", "mulhouse"}
 
 print(includeEnsemble("salut", ensemble))
 compare()
+
+s3 = {"bob", "etudie", "à", "l", "ensisa"}
+s4 = {"à", "le", "la", "les", "l"}
+print(difference(s3, s4))
